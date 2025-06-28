@@ -1,129 +1,104 @@
-🖐️ Hand Gesture Volume Controller
-Control your Android phone’s volume using just your hand gestures — no buttons or touch needed!
-This Flutter package works alongside a small Python server that uses your webcam to detect hand movements and adjusts the phone volume in real time over Wi-Fi.
+# 🖐️ Hand Gesture Volume Controller
 
-📽️ Demo
-🎬 Watch Demo on YouTube
-(Replace with your screen recording link)
+Control your Android phone’s volume using your hand gestures — no buttons needed!  
+This Flutter package works with a small Python server that reads your hand movements from a webcam and updates the volume on your phone in real-time.
 
-🔧 Requirements
-A Windows PC or laptop with a webcam
+---
 
-An Android phone connected to the same Wi-Fi network
+## 📽️ Demo
 
-Python 3.8+
+https://youtu.be/YOUR_SCREEN_RECORDING_LINK  
+(*Add your video recording here after uploading to YouTube or GitHub*)
 
-Flutter 3.x
+---
 
-🚀 How It Works
-Python runs a lightweight Flask server that accesses your webcam.
+## 🔧 What You Need
 
-It uses MediaPipe to detect the distance between your thumb and index finger.
+- A **Windows PC or laptop** with a webcam
+- Your **Android phone** connected to the **same Wi-Fi**
+- Python 3.8 or later
+- Flutter 3.x
 
-That distance is mapped to a volume percentage (0–100).
+---
 
-The Python server sends this volume over Wi-Fi to the Flutter app.
+## 🚀 How It Works
 
-The Flutter app updates your Android phone’s volume in real-time.
+1. Python code runs on your computer and uses your webcam to detect hand gestures.
+2. It sends the volume level over your Wi-Fi.
+3. Your Flutter app receives that volume level and applies it on your phone.
 
-📦 How to Use
-✅ Step 1: Clone the Project
-bash
-Copy
-Edit
-git clone https://github.com/ZyadWKhedr/hand_gesture_volume_controller.git
+---
+
+## 📦 How to Use
+
+### Step 1: Clone This Package
+
+git clone https://github.com/ZyadWKhedr/hand_gesture_volume_controller
+
 cd hand_gesture_volume_controller
-🐍 Step 2: Run the Python Server
-Navigate to the server/ folder:
 
-bash
-Copy
-Edit
-cd server
-Install the Python dependencies:
+### Step 2: Run the Python Server
+Open a terminal inside the server/ folder.
 
-bash
-Copy
-Edit
+Install the required Python packages:
+
 pip install flask opencv-python mediapipe numpy
-Start the server:
+Run the server:
 
-bash
-Copy
-Edit
 python hand_control_server.py
-🚨 Don’t close this terminal!
-It runs the webcam and sends live volume data over Wi-Fi.
 
-You should see something like:
+- If everything works, it will say:
 
-nginx
-Copy
-Edit
 Running on http://192.168.xx.xx:5000
-👉 Copy that IP address — you’ll paste it into the Flutter app.
+👉 Copy that IP address — you’ll use it in the Flutter app!
 
-📱 Step 3: Run the Flutter App
-Open the example/ folder in VS Code or any Flutter IDE.
+Step 3: Open the Flutter Example App
+Open the example/ folder in VS Code.
 
-In main.dart, update the server IP like this:
+In main.dart, set your local server IP like this:
 
-dart
-Copy
-Edit
 final controller = GestureVolumeController(
   serverUrl: 'http://192.168.xx.xx:5000/volume-data',
 );
-Run the app on your Android phone:
+Run the app:
 
-bash
-Copy
-Edit
 flutter run
-🟢 You should now see the volume bar update as you move your fingers in front of your webcam!
+You’ll see a volume level on your phone screen that changes when you move your fingers 👌
 
-✋ Supported Gestures
-Volume Control: Distance between thumb and index finger
+### ✋ Supported Gestures
+1. 📏 Distance between your thumb and index controls the volume
 
-Mute: Fingers touch (distance ≈ 0)
+2. 🤏 If they touch, the system mutes
 
-Live Display: Volume level updates instantly in the app
+3. 🟢 Volume bar is displayed in real time
 
-🗂️ Project Structure
-css
-Copy
-Edit
+### 📁 Project Structure
+
 hand_gesture_volume_controller/
 │
-├── lib/                    → Flutter package code
+├── lib/                    → Flutter code
 │   └── hand_gesture_volume_controller.dart
 │
-├── example/                → Demo Flutter app
+├── example/                → Example app that uses the package
 │   └── main.dart
 │
-├── server/                 → Python server for hand tracking
+├── server/                 → Python hand gesture detection
 │   └── hand_control_server.py
 │
 ├── pubspec.yaml
 └── README.md
-🧠 What I Learned (and You Will Too!)
-Real-time hand tracking with MediaPipe
 
-Sending data between Python (Flask) and Flutter over Wi-Fi
 
-Creating your first custom Flutter package
+### 🤝 Contribute or Fork
+Want to help? You can:
 
-Intro to Computer Vision and gesture-based control
+Add more gestures (pause, swipe, next/prev)
 
-🤝 Contribute or Fork
-Want to improve this?
+Improve UI
 
-Add more gestures (pause, next/prev, swipe)
+Help port to iOS (if possible)
 
-Improve UI and animations
+### 📜 License
+MIT © 2025 Zyad
+Made using Flutter, Python, and MediaPipe
 
-Try porting to iOS or add platform support
-
-📜 License
-MIT © 2025 Zyad Khedr
-Made with ❤️ using Flutter, Python, and MediaPipe
