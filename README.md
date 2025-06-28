@@ -5,10 +5,9 @@ This Flutter package works with a small Python server that reads your hand movem
 
 ---
 
-## 📽️ Demo
+## 📽️ Demo 
 
-https://youtu.be/YOUR_SCREEN_RECORDING_LINK  
-(*Add your video recording here after uploading to YouTube or GitHub*)
+https://github.com/user-attachments/assets/01872de8-d837-407c-9d0c-98fd9a2de768
 
 ---
 
