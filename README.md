@@ -52,7 +52,7 @@ python hand_control_server.py
 Running on http://192.168.xx.xx:5000
 👉 Copy that IP address — you’ll use it in the Flutter app!
 
-Step 3: Open the Flutter Example App
+### Step 3: Open the Flutter Example App
 Open the example/ folder in VS Code.
 
 In main.dart, set your local server IP like this:
@@ -71,22 +71,6 @@ You’ll see a volume level on your phone screen that changes when you move your
 2. 🤏 If they touch, the system mutes
 
 3. 🟢 Volume bar is displayed in real time
-
-### 📁 Project Structure
-
-hand_gesture_volume_controller/
-│
-├── lib/                    → Flutter code
-│   └── hand_gesture_volume_controller.dart
-│
-├── example/                → Example app that uses the package
-│   └── main.dart
-│
-├── server/                 → Python hand gesture detection
-│   └── hand_control_server.py
-│
-├── pubspec.yaml
-└── README.md
 
 
 ### 🤝 Contribute or Fork
